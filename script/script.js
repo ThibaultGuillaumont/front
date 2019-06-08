@@ -15,6 +15,7 @@ function init(){
 }
 
 function draw() {
+  var elapsed=parseInt(new Date() - startTime);
   var ctx = document.getElementById('canvas').getContext('2d');
 
   ctx.globalCompositeOperation = 'destination-over';
@@ -27,13 +28,13 @@ function draw() {
 
   //DRAW BACKGROUND
   var time = new Date();
-  position1 = 2373*(time.getSeconds()/60 + time.getMilliseconds()/60000)*speed_back1 % 2373;
+  position1 = 2373*(elapsed/100000)*speed_back1 % 2373;
   ctx.translate(position1,background_position);
   ctx.drawImage(background_1,0,0);
   ctx.restore();
   ctx.save();
   //make tilable
-  position2 = (2373*(time.getSeconds()/60 + time.getMilliseconds()/60000)*speed_back1 % 2373 ) -2373;
+  position2 = (2373*(elapsed/100000)*speed_back1 % 2373 ) -2373;
   ctx.translate(position2,background_position);
   ctx.drawImage(background_2,0,0);
   ctx.restore();
