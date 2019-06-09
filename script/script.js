@@ -66,18 +66,21 @@ function draw_background(elapsed) {
   ctx.drawImage(background_2,0,0);
   ctx.restore();
   ctx.save();
-  console.log(elapsed);
 
 
   //DRAW Far AWAY BACKGROUND
   position1 = 2772*(elapsed/100000)*speed_back_far % 2772;
   ctx.translate(position1,background_far_position);
+  ctx.globalAlpha = 0.8;
+  ctx.filter = 'blur(4px)';
   ctx.drawImage(background_far_1,0,0);
   ctx.restore();
   ctx.save();
   //make tilable
   position2 = (2772*(elapsed/100000)*speed_back_far % 2772 ) -2772;
   ctx.translate(position2,background_far_position);
+  ctx.globalAlpha = 0.8;
+  ctx.filter = 'blur(4px)';
   ctx.drawImage(background_far_1,0,0);
   ctx.restore();
   ctx.save();
