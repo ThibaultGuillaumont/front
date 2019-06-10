@@ -72,7 +72,7 @@ function draw_background(elapsed) {
   position1 = 2772*(elapsed/100000)*speed_back_far % 2772;
   ctx.translate(position1,background_far_position);
   ctx.globalAlpha = 0.8;
-  ctx.filter = 'blur(4px)';
+  ctx.filter = 'blur(2px)';
   ctx.drawImage(background_far_1,0,0);
   ctx.restore();
   ctx.save();
@@ -80,7 +80,7 @@ function draw_background(elapsed) {
   position2 = (2772*(elapsed/100000)*speed_back_far % 2772 ) -2772;
   ctx.translate(position2,background_far_position);
   ctx.globalAlpha = 0.8;
-  ctx.filter = 'blur(4px)';
+  ctx.filter = 'blur(2px)';
   ctx.drawImage(background_far_1,0,0);
   ctx.restore();
   ctx.save();
